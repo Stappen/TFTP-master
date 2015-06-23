@@ -1,0 +1,205 @@
+Release 14.4 Map P.49d (nt64)
+Xilinx Map Application Log File for Design 'ADDRESSFIFO'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc7z020-clg484-1 -w -logic_opt off -ol
+high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off
+-power off -o ADDRESSFIFO_map.ncd ADDRESSFIFO.ngd ADDRESSFIFO.pcf 
+Target Device  : xc7z020
+Target Package : clg484
+Target Speed   : -1
+Mapper Version : zynq -- $Revision: 1.55 $
+Mapped Date    : Tue Jun 11 15:01:41 2013
+
+Mapping design into LUTs...
+WARNING:MapLib:701 - Signal s_aclk connected to top level port s_aclk has been
+   removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<31> connected to top level port m_axis_tdata<31> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<30> connected to top level port m_axis_tdata<30> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<29> connected to top level port m_axis_tdata<29> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<28> connected to top level port m_axis_tdata<28> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<27> connected to top level port m_axis_tdata<27> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<26> connected to top level port m_axis_tdata<26> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<25> connected to top level port m_axis_tdata<25> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<24> connected to top level port m_axis_tdata<24> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<23> connected to top level port m_axis_tdata<23> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<22> connected to top level port m_axis_tdata<22> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<21> connected to top level port m_axis_tdata<21> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<20> connected to top level port m_axis_tdata<20> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<19> connected to top level port m_axis_tdata<19> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<18> connected to top level port m_axis_tdata<18> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<17> connected to top level port m_axis_tdata<17> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<16> connected to top level port m_axis_tdata<16> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<15> connected to top level port m_axis_tdata<15> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<14> connected to top level port m_axis_tdata<14> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<13> connected to top level port m_axis_tdata<13> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<12> connected to top level port m_axis_tdata<12> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<11> connected to top level port m_axis_tdata<11> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<10> connected to top level port m_axis_tdata<10> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<9> connected to top level port m_axis_tdata<9> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<8> connected to top level port m_axis_tdata<8> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<7> connected to top level port m_axis_tdata<7> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<6> connected to top level port m_axis_tdata<6> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<5> connected to top level port m_axis_tdata<5> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<4> connected to top level port m_axis_tdata<4> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<3> connected to top level port m_axis_tdata<3> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<2> connected to top level port m_axis_tdata<2> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<1> connected to top level port m_axis_tdata<1> has been removed.
+WARNING:MapLib:701 - Signal
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/do
+   ut_i<0> connected to top level port m_axis_tdata<0> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<31> connected to top level port
+   s_axis_tdata<31> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<30> connected to top level port
+   s_axis_tdata<30> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<29> connected to top level port
+   s_axis_tdata<29> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<28> connected to top level port
+   s_axis_tdata<28> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<27> connected to top level port
+   s_axis_tdata<27> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<26> connected to top level port
+   s_axis_tdata<26> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<25> connected to top level port
+   s_axis_tdata<25> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<24> connected to top level port
+   s_axis_tdata<24> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<23> connected to top level port
+   s_axis_tdata<23> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<22> connected to top level port
+   s_axis_tdata<22> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<21> connected to top level port
+   s_axis_tdata<21> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<20> connected to top level port
+   s_axis_tdata<20> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<19> connected to top level port
+   s_axis_tdata<19> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<18> connected to top level port
+   s_axis_tdata<18> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<17> connected to top level port
+   s_axis_tdata<17> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<16> connected to top level port
+   s_axis_tdata<16> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<15> connected to top level port
+   s_axis_tdata<15> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<14> connected to top level port
+   s_axis_tdata<14> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<13> connected to top level port
+   s_axis_tdata<13> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<12> connected to top level port
+   s_axis_tdata<12> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<11> connected to top level port
+   s_axis_tdata<11> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<10> connected to top level port
+   s_axis_tdata<10> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<9> connected to top level port
+   s_axis_tdata<9> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<8> connected to top level port
+   s_axis_tdata<8> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<7> connected to top level port
+   s_axis_tdata<7> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<6> connected to top level port
+   s_axis_tdata<6> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<5> connected to top level port
+   s_axis_tdata<5> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<4> connected to top level port
+   s_axis_tdata<4> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<3> connected to top level port
+   s_axis_tdata<3> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<2> connected to top level port
+   s_axis_tdata<2> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<1> connected to top level port
+   s_axis_tdata<1> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tdata<0> connected to top level port
+   s_axis_tdata<0> has been removed.
+WARNING:MapLib:701 - Signal s_axis_tvalid connected to top level port
+   s_axis_tvalid has been removed.
+WARNING:MapLib:701 - Signal m_axis_tready connected to top level port
+   m_axis_tready has been removed.
+WARNING:MapLib:701 - Signal m_axis_tvalid connected to top level port
+   m_axis_tvalid has been removed.
+WARNING:MapLib:701 - Signal s_axis_tready connected to top level port
+   s_axis_tready has been removed.
+WARNING:MapLib:701 - Signal s_aresetn connected to top level port s_aresetn has
+   been removed.
+Running directed packing...
+Running delay-based LUT packing...
+ERROR:Pack:198 - NCD was not produced.  All logic was removed from the design. 
+   This is usually due to having no input or output PAD connections in the
+   design and no nets or symbols marked as 'SAVE'.  You can either add PADs or
+   'SAVE' attributes to the design, or run 'map -u' to disable logic trimming in
+   the mapper.  For more information on trimming issues search the Xilinx
+   Answers database for "ERROR:Pack:198" and read the Master Answer Record for
+   MAP Trimming Issues.
+
+Mapping completed.
+See MAP report file "ADDRESSFIFO_map.mrp" for details.
+Problem encountered during the packing phase.
+
+Design Summary
+--------------
+Number of errors   :   1
+Number of warnings :  70

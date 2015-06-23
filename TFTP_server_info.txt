@@ -1,0 +1,56 @@
+Our TFTP server is not yet fully functional, ARP is untested, as are the
+ethernet frame checksums.
+
+We have not been able to load it onto a board, as it is not finished.
+
+It does parse TFTP packets, generating opcodes correctly.
+
+It also takes opcodes and data and produces valid ip/udp/tftp packets and 
+      ethernet frame headers.
+  - Code for the Frame checksum has been created but not included in the
+          design, this is untested
+  - Code for receiving data from block ram has been created but not included in
+          the design.
+
+RX:
+  - receives data, parses ethernet, ip, udp, tftp headers.
+  - performs checksum on requested file to find the tid (or block num on acks)
+  - the tid is the udp src port for response, also identifies the file on acks
+
+RX mostly conforms to the specification.
+The differences are:
+  - Instead of passing the data between components, the components receive all
+          data and have counters that activate them.
+  - The components themselves are heavily based on the ntp code. IP is
+          changed only minorly, a separate module was added to extract
+          header information from UDP.
+  - The TFTP decode logic is all self contained, it uses a checksum instead of
+          CAM.
+  - Validity logic is added. Again heavily based on the ntp code.
+
+TX is the closest to the specification.
+  - Memory uses block RAM.
+
+TFTP Packet Assembler is significantly changed.
+  - The tftp payload data is read into a register that it is shifted through
+          until it is ready to be forwarded by the scheduler.
+  - The UDP checksum is calculated by the UDP header module, which also takes
+          in the data being feed in from memory.
+  - A state machine controls the output
+      - Each header module has a register it loads the completed header into
+      - The state machine forwards the data from these registers in turn
+      - Then it forwards the data from the payload register.
+      - When the payload register is empty, or it's data is being read out, 
+              the data from the next packet can be read in
+      - This can cause a stall, when packets are small.
+              - zero sized packets will bypass the payload register
+              - packets can begin to be forwarded before the payload has passed
+                      all the way through the payload register
+              - This could also be fixed by instantiating more than one
+                      tftp packet assembler and having the scheduler select
+                      between them (a trivial change, though the scheduler is
+                                    currently untested)
+
+The overall design mostly matches the specification.
+The arp assembler is fairly simple, loads data into a register and reads it out
+        one byte at a time.

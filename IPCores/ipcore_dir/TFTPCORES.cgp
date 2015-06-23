@@ -1,0 +1,22 @@
+# Date: Mon Jun 10 12:11:52 2013
+
+SET addpads = false
+SET asysymbol = true
+SET busformat = BusFormatAngleBracketNotRipped
+SET createndf = false
+SET designentry = Verilog
+SET device = xc7z020
+SET devicefamily = zynq
+SET flowvendor = Other
+SET formalverification = false
+SET foundationsym = false
+SET implementationfiletype = Ngc
+SET package = clg484
+SET removerpms = false
+SET simulationfiles = Behavioral
+SET speedgrade = -3
+SET verilogsim = true
+SET vhdlsim = false
+SET workingdirectory = .\tmp\
+
+# CRC: d33a3048

@@ -1,0 +1,81 @@
+Hardware Read-Only TFTP Server
+
+Goals:
+  Build a TFTP server capable of delivering line speed responses to file
+requests. As response packets will be larger than request packets, it will be
+unable to respond to line-rate requests. Instead the aim is to be capable of
+handle bursts of line-rate requests for extended periods of time. An ideal
+application for this will be network based booting or CPE upgrades for DSL
+networks. 
+
+Overview:
+  We have broken up the design into two main stages, with micro-op queues
+connecting them. The first stage, Rx, takes incoming packets and parses valid
+ARP and TFTP requests. The second stage, Tx, sends responses to ARP requests
+and TFTP Ack and Req messages. 
+
+Rx:
+  Uses GMII to receive packet bytes one at a time. It is deeply pipelined so it
+will never stall. It is split according to the OSI stack.
+
+FCS:
+  Uses tail-logic to compute the CRC32 checksum without stalling. There is an
+Error on our diagram, that the checksum will be calculated over the checksum
+itself. The checksum calculator should take input from the last register not
+the first.
+
+Ethernet:
+  Checks that the destination address matches this device. If so it extracts
+the source MAC address and reads the ethertype field to determine whether this
+is an ARP or unicast IP packet, otherwise it drops the packet.
+
+ARP:
+  Checks it is a valid ARP request, and extracts source IP address.
+
+IP:
+  Checks the header checksum, extracts the source IP address and determines the
+length of the IP header. Then when the IP header is complete it forwards bytes
+bytes received directly onto UDP.
+
+UDP:
+  Extracts the source and destination port, and determines this is a valid
+UDP packet. To do this it requires the source IP address. There is an error on
+our diagram suggesting the UDP checksum will be calculated seperately.
+
+TFTP:
+  Determines TFTP type. If it is an Ack, the number is extracted, if it is a
+Req we determine the PID by a hash on the filename. This will be used to
+determine the byte offset in memory of the file as well as the UDP source port
+for responses. Any other packet, including an error will be discarded. We may
+implement error responses, but this is not part of the current design.
+
+Tx:
+  Tx contains seperate queues for various points in the datapath. These allow
+synchronisation and deal with bursts of requests at a rate faster than we can
+respond.
+
+TFTP/Memory access:
+  As Opcodes are received, the memory address is determined from the PID and
+Ack number, which is added to the Mem Addr Queue, and the rest of the opcode
+is added to the Opcode FIFO. Every time Memory completes a read it pops from
+the mem addr queue and adds the data to the Data FIFO. When the Data FIFO only
+has one available data slot it asserts full and prevents the Mem Addr FIFO
+from popping.
+  The Data and Mem Addr FIFO lengths sum to equal the Opcode FIFO length. When
+the packet assembler is ready to take another packet, it pops from both the
+Data and Opcode FIFO ensuring the queues are synchronised.
+
+TFTP Packet Assembler:
+  Assembles the packet from the Opcode data and the Memory Data. It computes
+the UDP checksum for a packet data is read from the register containing the
+following packet. 
+  The IP checksum is a simple operation, as the only data that changes is the
+Destination IP Address. 
+
+Scheduler:
+  When a packet is sent the scheduler signals either the ARP or TFTP Packet
+Assembler to begin sending the next packet.
+
+FCS:
+  The FCS computes the Ethernet Frame Checksum as it is sent and appends the
+result.
